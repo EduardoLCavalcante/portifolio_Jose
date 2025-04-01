@@ -118,7 +118,7 @@ const SkillsSection = () => {
                   { name: 'TailwindCSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
                   { name: 'HTML5', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
                   { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-                  { name: 'Framer Motion', logo: 'https://camo.githubusercontent.com/179d66ab2b0321726c88a586c4ad41cac3885672ff9b86b27e0b5ec298b5b2d0/68747470733a2f2f6672616d657275736572636f6e74656e742e636f6d2f696d616765732f34386861395a52396f5a51475136675a38595566456c50335430412e706e67' },
+                  { name: 'Framer Motion', logo: 'https://www.vectorlogo.zone/logos/framer/framer-icon.svg' },
                 ].map((tech, index) => (
                   <div 
                     key={index} 

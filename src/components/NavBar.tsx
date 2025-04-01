@@ -36,15 +36,15 @@ const NavBar = () => {
           </div>
           
           <div className="flex items-center space-x-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://github.com/EduardoLCavalcante" target="_blank" rel="noopener noreferrer" 
                className="text-foreground/80 hover:text-primary transition-colors">
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.linkedin.com/in/joseecavalcante/" target="_blank" rel="noopener noreferrer" 
                className="text-foreground/80 hover:text-primary transition-colors">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:email@example.com" 
+            <a href="mailto:eduardocavalcante131@gmail.com" 
                className="text-foreground/80 hover:text-primary transition-colors">
               <Mail size={20} />
             </a>
@@ -69,15 +69,15 @@ const NavBar = () => {
           <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contato</a>
           
           <div className="flex items-center space-x-4 pt-2">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://github.com/EduardoLCavalcante" target="_blank" rel="noopener noreferrer" 
                className="text-foreground/80 hover:text-primary transition-colors">
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.linkedin.com/in/joseecavalcante/" target="_blank" rel="noopener noreferrer" 
                className="text-foreground/80 hover:text-primary transition-colors">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:email@example.com" 
+            <a href="mailto:eduardocavalcante131@gmail.com" 
                className="text-foreground/80 hover:text-primary transition-colors">
               <Mail size={20} />
             </a>

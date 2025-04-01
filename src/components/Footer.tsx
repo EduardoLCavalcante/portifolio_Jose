@@ -24,15 +24,15 @@ const Footer = () => {
             
             <div className="flex flex-col items-center md:items-end">
               <div className="flex space-x-4 mb-4">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+                <a href="https://github.com/EduardoLCavalcante" target="_blank" rel="noopener noreferrer" 
                    className="text-foreground/60 hover:text-primary transition-colors p-2">
                   <Github size={20} />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+                <a href="https://www.linkedin.com/in/joseecavalcante/" target="_blank" rel="noopener noreferrer" 
                    className="text-foreground/60 hover:text-primary transition-colors p-2">
                   <Linkedin size={20} />
                 </a>
-                <a href="mailto:email@example.com" 
+                <a href="mailto:eduardocavalcante131@gmail.com" 
                    className="text-foreground/60 hover:text-primary transition-colors p-2">
                   <Mail size={20} />
                 </a>
