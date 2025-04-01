@@ -15,7 +15,7 @@ const ContactSection = () => {
   // Initialize EmailJS
   useEffect(() => {
     // Initialize EmailJS with a public key (this is safe to expose in client-side code)
-    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID when you create an account
+    emailjs.init("r1yp0yzpnq9WTUFi-"); // Replace with your EmailJS User ID when you create an account
   }, []);
 
   useEffect(() => {
