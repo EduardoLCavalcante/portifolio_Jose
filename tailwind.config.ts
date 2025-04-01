@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -107,6 +106,15 @@ export default {
 					"33%": { transform: 'scale(1.1) translate(30px, -50px)' },
 					"66%": { transform: 'scale(0.9) translate(-20px, 20px)' },
 					"100%": { transform: 'scale(1) translate(0, 0)' },
+				},
+				shimmer: {
+					"100%": {
+						transform: "translateX(100%)",
+					},
+				},
+				spotlightPan: {
+					"0%": { transform: "translateX(-30%)" },
+					"100%": { transform: "translateX(30%)" }
 				}
 			},
 			animation: {
@@ -119,7 +127,12 @@ export default {
 				"float": "float 6s ease-in-out infinite",
 				"glow": "glow 2s ease-in-out infinite",
 				"blob": "blob 20s ease-in-out infinite",
+				shimmer: "shimmer 2s infinite",
+				"spotlight-slow": "spotlightPan 15s infinite linear",
 			},
+			backgroundImage: {
+				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+			}
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

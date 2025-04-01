@@ -24,7 +24,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="py-20 px-6 relative">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 about-animate hidden-initially">
@@ -36,24 +36,38 @@ const AboutSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="glass-panel p-6 rounded-lg about-animate hidden-initially stagger-1">
-            <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
-              <Code className="text-primary" size={24} />
+          <div 
+            className="glass-panel p-6 rounded-lg about-animate hidden-initially stagger-1 hover:shadow-lg hover:shadow-primary/20 transition-all duration-500 relative overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-lg opacity-0 group-hover:opacity-30 blur-sm group-hover:animate-pulse-slow"></div>
+            
+            <div className="relative">
+              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4 group-hover:animate-bounce">
+                <Code className="text-primary" size={24} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Desenvolvimento</h3>
+              <p className="text-foreground/70">
+                Especialista em React, TailwindCSS e TypeScript para criar interfaces modernas e responsivas.
+              </p>
             </div>
-            <h3 className="text-xl font-bold mb-2">Desenvolvimento</h3>
-            <p className="text-foreground/70">
-              Especialista em React, TailwindCSS e TypeScript para criar interfaces modernas e responsivas.
-            </p>
           </div>
 
-          <div className="glass-panel p-6 rounded-lg about-animate hidden-initially stagger-2">
-            <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
-              <Rocket className="text-purple-400" size={24} />
+          <div 
+            className="glass-panel p-6 rounded-lg about-animate hidden-initially stagger-2 hover:shadow-lg hover:shadow-purple-400/20 transition-all duration-500 relative overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-400/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-400 to-primary rounded-lg opacity-0 group-hover:opacity-30 blur-sm group-hover:animate-pulse-slow"></div>
+            
+            <div className="relative">
+              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4 group-hover:animate-bounce">
+                <Rocket className="text-purple-400" size={24} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Backend Integration</h3>
+              <p className="text-foreground/70">
+                Experiência com Supabase para autenticação, banco de dados e integrações de API.
+              </p>
             </div>
-            <h3 className="text-xl font-bold mb-2">Backend Integration</h3>
-            <p className="text-foreground/70">
-              Experiência com Supabase para autenticação, banco de dados e integrações de API.
-            </p>
           </div>
         </div>
       </div>
