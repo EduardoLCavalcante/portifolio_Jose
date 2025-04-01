@@ -44,6 +44,11 @@
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
 }
 
 @layer components {
@@ -76,6 +81,7 @@
     transform: translateY(20px);
   }
 
+  /* Mobile optimized stagger classes */
   .stagger-1 {
     animation-delay: 0.1s;
   }
@@ -104,5 +110,35 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+  
+  /* Responsive container for small devices */
+  .mobile-container {
+    @apply px-4 md:px-6 lg:px-8 w-full max-w-full;
+  }
+  
+  /* Better mobile spacing */
+  .mobile-py {
+    @apply py-14 md:py-20;
+  }
+  
+  /* Responsive text sizing */
+  .mobile-text {
+    @apply text-sm md:text-base;
+  }
+  
+  .mobile-heading {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  /* Better image handling for mobile */
+  .responsive-img {
+    @apply max-w-full h-auto object-cover;
+  }
 }
 
+/* Add responsive animations */
+@media (max-width: 768px) {
+  .animate-fade-in {
+    animation-duration: 0.5s;
+  }
+}
