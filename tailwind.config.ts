@@ -101,6 +101,12 @@ export default {
 				glow: {
 					"0%, 100%": { boxShadow: '0 0 5px rgba(74, 222, 128, 0.5)' },
 					"50%": { boxShadow: '0 0 20px rgba(74, 222, 128, 0.8)' },
+				},
+				blob: {
+					"0%": { transform: 'scale(1) translate(0, 0)' },
+					"33%": { transform: 'scale(1.1) translate(30px, -50px)' },
+					"66%": { transform: 'scale(0.9) translate(-20px, 20px)' },
+					"100%": { transform: 'scale(1) translate(0, 0)' },
 				}
 			},
 			animation: {
@@ -112,6 +118,7 @@ export default {
 				"pulse-slow": "pulse 3s infinite",
 				"float": "float 6s ease-in-out infinite",
 				"glow": "glow 2s ease-in-out infinite",
+				"blob": "blob 20s ease-in-out infinite",
 			},
 		},
 	},
