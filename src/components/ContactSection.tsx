@@ -120,7 +120,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium">Email</h4>
                     <a href="mailto:contato@exemplo.com" className="text-foreground/70 hover:text-primary transition-colors">
-                      contato@exemplo.com
+                      eduardocavalcante131@gmail.com
                     </a>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const ContactSection = () => {
                   <MapPin className="text-primary mt-1" size={20} />
                   <div>
                     <h4 className="font-medium">Localização</h4>
-                    <p className="text-foreground/70">São Paulo, Brasil</p>
+                    <p className="text-foreground/70">Limoeiro do Norte, Brasil</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -136,7 +136,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium">Telefone</h4>
                     <a href="tel:+5511999999999" className="text-foreground/70 hover:text-primary transition-colors">
-                      +55 (11) 99999-9999
+                      +55 (88) 99316-7357
                     </a>
                   </div>
                 </div>
