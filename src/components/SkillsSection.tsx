@@ -15,7 +15,7 @@ const skills = [
   { 
     name: 'TailwindCSS', 
     level: 95, 
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg'
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg'
   },
   { 
     name: 'Supabase', 
