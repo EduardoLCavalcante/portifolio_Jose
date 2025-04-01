@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Send, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { useToast } from "../hooks/use-toast";
+import emailjs from 'emailjs-com';
 
 const ContactSection = () => {
   const [name, setName] = useState('');
@@ -10,6 +11,12 @@ const ContactSection = () => {
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  // Initialize EmailJS
+  useEffect(() => {
+    // Initialize EmailJS with a public key (this is safe to expose in client-side code)
+    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID when you create an account
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,17 +42,41 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Mensagem enviada!",
-        description: "Obrigado pelo contato. Responderei o mais breve possível.",
+    // Prepare the template parameters
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+      to_email: 'eduardocavalcante131@gmail.com', // The recipient email
+    };
+
+    // Send the email using EmailJS
+    emailjs.send(
+      'YOUR_SERVICE_ID', // Replace with your EmailJS Service ID
+      'YOUR_TEMPLATE_ID', // Replace with your EmailJS Template ID
+      templateParams
+    )
+      .then(() => {
+        toast({
+          title: "Mensagem enviada!",
+          description: "Obrigado pelo contato. Responderei o mais breve possível.",
+        });
+        // Reset form fields
+        setName('');
+        setEmail('');
+        setMessage('');
+      })
+      .catch((error) => {
+        console.error('Email sending failed:', error);
+        toast({
+          title: "Erro ao enviar",
+          description: "Houve um problema ao enviar sua mensagem. Por favor, tente novamente.",
+          variant: "destructive",
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-      setName('');
-      setEmail('');
-      setMessage('');
-      setIsSubmitting(false);
-    }, 1000);
   };
 
   return (
@@ -119,7 +150,7 @@ const ContactSection = () => {
                   <Mail className="text-primary mt-1" size={20} />
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <a href="mailto:contato@exemplo.com" className="text-foreground/70 hover:text-primary transition-colors">
+                    <a href="mailto:eduardocavalcante131@gmail.com" className="text-foreground/70 hover:text-primary transition-colors">
                       eduardocavalcante131@gmail.com
                     </a>
                   </div>
