@@ -7,6 +7,7 @@ interface Repository {
   stargazers_count: number;
   forks_count: number;
   language: string | null;
+  homepage: string | null;
 }
 
 interface GithubProfile {
@@ -32,7 +33,7 @@ export async function fetchGithubProfile(): Promise<GithubProfile | null> {
 
 export async function fetchRepositories(): Promise<Repository[]> {
   try {
-    const response = await fetch('https://api.github.com/users/EduardoLCavalcante/repos?sort=updated&per_page=5');
+    const response = await fetch('https://api.github.com/users/EduardoLCavalcante/repos?sort=updated&per_page=6');
     if (!response.ok) throw new Error('Failed to fetch repositories');
     return await response.json();
   } catch (error) {

@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { Code, Sparkles, Rocket } from 'lucide-react';
+import { Code, Rocket } from 'lucide-react';
 
 const AboutSection = () => {
   useEffect(() => {
@@ -35,7 +35,7 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <div className="glass-panel p-6 rounded-lg about-animate hidden-initially stagger-1">
             <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
               <Code className="text-primary" size={24} />
@@ -47,16 +47,6 @@ const AboutSection = () => {
           </div>
 
           <div className="glass-panel p-6 rounded-lg about-animate hidden-initially stagger-2">
-            <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
-              <Sparkles className="text-blue-400" size={24} />
-            </div>
-            <h3 className="text-xl font-bold mb-2">UI/UX Design</h3>
-            <p className="text-foreground/70">
-              Criação de experiências visuais intuitivas e atraentes, com foco na satisfação do usuário.
-            </p>
-          </div>
-
-          <div className="glass-panel p-6 rounded-lg about-animate hidden-initially stagger-3">
             <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
               <Rocket className="text-purple-400" size={24} />
             </div>

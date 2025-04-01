@@ -2,12 +2,36 @@
 import React, { useEffect } from 'react';
 
 const skills = [
-  { name: 'React', level: 90 },
-  { name: 'TypeScript', level: 85 },
-  { name: 'TailwindCSS', level: 95 },
-  { name: 'Supabase', level: 80 },
-  { name: 'Next.js', level: 75 },
-  { name: 'Figma', level: 70 },
+  { 
+    name: 'React', 
+    level: 90, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+  },
+  { 
+    name: 'TypeScript', 
+    level: 85, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
+  },
+  { 
+    name: 'TailwindCSS', 
+    level: 95, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg'
+  },
+  { 
+    name: 'Supabase', 
+    level: 80, 
+    logo: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png'
+  },
+  { 
+    name: 'Next.js', 
+    level: 75, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
+  },
+  { 
+    name: 'Figma', 
+    level: 70, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'
+  },
 ];
 
 const SkillsSection = () => {
@@ -61,7 +85,14 @@ const SkillsSection = () => {
               {skills.map((skill, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="font-medium">{skill.name}</span>
+                    <div className="flex items-center gap-3">
+                      <img 
+                        src={skill.logo} 
+                        alt={skill.name} 
+                        className="w-6 h-6 object-contain" 
+                      />
+                      <span className="font-medium">{skill.name}</span>
+                    </div>
                     <span className="text-sm text-foreground/70">{skill.level}%</span>
                   </div>
                   <div className="w-full h-2 bg-secondary/50 rounded-full overflow-hidden">
@@ -79,28 +110,48 @@ const SkillsSection = () => {
           <div className="space-y-8">
             <div className="glass-panel p-8 rounded-lg">
               <h3 className="text-xl font-bold mb-4">Tecnologias Front-end</h3>
-              <div className="flex flex-wrap gap-3">
-                {['React', 'TypeScript', 'JavaScript', 'TailwindCSS', 'HTML5', 'CSS3', 'Redux', 'Framer Motion', 'Jest', 'Storybook'].map((tech, index) => (
-                  <span 
+              <div className="flex flex-wrap gap-4">
+                {[
+                  { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+                  { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+                  { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+                  { name: 'TailwindCSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+                  { name: 'HTML5', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+                  { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+                  { name: 'Framer Motion', logo: 'https://camo.githubusercontent.com/179d66ab2b0321726c88a586c4ad41cac3885672ff9b86b27e0b5ec298b5b2d0/68747470733a2f2f6672616d657275736572636f6e74656e742e636f6d2f696d616765732f34386861395a52396f5a51475136675a38595566456c50335430412e706e67' },
+                ].map((tech, index) => (
+                  <div 
                     key={index} 
-                    className="inline-block px-3 py-1 bg-secondary/50 rounded-full text-sm"
+                    className="flex flex-col items-center gap-2 bg-secondary/30 p-3 rounded-lg"
                   >
-                    {tech}
-                  </span>
+                    <img src={tech.logo} alt={tech.name} className="w-10 h-10 object-contain" />
+                    <span className="text-xs">{tech.name}</span>
+                  </div>
                 ))}
               </div>
             </div>
 
             <div className="glass-panel p-8 rounded-lg">
               <h3 className="text-xl font-bold mb-4">Ferramentas & Backend</h3>
-              <div className="flex flex-wrap gap-3">
-                {['Supabase', 'Git', 'VSCode', 'Figma', 'Vercel', 'Netlify', 'GitHub Actions', 'Firebase', 'Rest API', 'GraphQL'].map((tool, index) => (
-                  <span 
+              <div className="flex flex-wrap gap-4">
+                {[
+                  { name: 'Supabase', logo: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png' },
+                  { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+                  { name: 'VSCode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+                  { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+                  { name: 'Vercel', logo: 'https://seeklogo.com/images/V/vercel-logo-F748E39008-seeklogo.com.png' },
+                  { name: 'Netlify', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg' },
+                  { name: 'GitHub Actions', logo: 'https://seeklogo.com/images/G/github-actions-logo-031704BDC6-seeklogo.com.png' },
+                  { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
+                  { name: 'Rest API', logo: 'https://www.svgrepo.com/show/375531/api.svg' },
+                ].map((tool, index) => (
+                  <div 
                     key={index} 
-                    className="inline-block px-3 py-1 bg-secondary/50 rounded-full text-sm"
+                    className="flex flex-col items-center gap-2 bg-secondary/30 p-3 rounded-lg"
                   >
-                    {tool}
-                  </span>
+                    <img src={tool.logo} alt={tool.name} className="w-10 h-10 object-contain" />
+                    <span className="text-xs">{tool.name}</span>
+                  </div>
                 ))}
               </div>
             </div>
