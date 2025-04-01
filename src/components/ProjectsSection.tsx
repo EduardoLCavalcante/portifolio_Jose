@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ExternalLink, Github, Star, GitFork } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { fetchRepositories } from '../utils/githubApi';
+import { Skeleton } from '../components/ui/skeleton';
 
 interface Repository {
   id: number;
@@ -18,14 +19,26 @@ interface Repository {
 const ProjectsSection = () => {
   const [projects, setProjects] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadRepositories = async () => {
+      setLoading(true);
+      setError(null);
+      
       try {
+        console.log('Loading repositories...');
         const repos = await fetchRepositories();
-        setProjects(repos);
-      } catch (error) {
-        console.error('Error fetching repositories:', error);
+        console.log('Repositories loaded:', repos);
+        
+        if (repos.length === 0) {
+          setError('No repositories found');
+        } else {
+          setProjects(repos);
+        }
+      } catch (err) {
+        console.error('Error in component when fetching repositories:', err);
+        setError('Failed to load projects');
       } finally {
         setLoading(false);
       }
@@ -52,7 +65,7 @@ const ProjectsSection = () => {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
-  }, []);
+  }, [projects]); // Added projects as dependency to reinitialize animation after loading
 
   // Placeholder images for repositories that don't have images
   const placeholderImages = [
@@ -62,6 +75,25 @@ const ProjectsSection = () => {
     'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&q=80&w=2070',
     'https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?auto=format&fit=crop&q=80&w=2080',
   ];
+
+  const renderProjectSkeleton = () => (
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {Array.from({ length: 6 }).map((_, index) => (
+        <div key={index} className="glass-panel rounded-lg overflow-hidden">
+          <Skeleton className="h-48 w-full" />
+          <div className="p-6">
+            <Skeleton className="h-6 w-3/4 mb-2" />
+            <Skeleton className="h-4 w-full mb-4" />
+            <Skeleton className="h-4 w-1/2 mb-4" />
+            <div className="flex space-x-3 pt-2">
+              <Skeleton className="h-9 w-20" />
+              <Skeleton className="h-9 w-20" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <section id="projects" className="py-20 px-6">
@@ -76,8 +108,13 @@ const ProjectsSection = () => {
         </div>
 
         {loading ? (
-          <div className="flex justify-center">
-            <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+          renderProjectSkeleton()
+        ) : error ? (
+          <div className="text-center p-8 bg-destructive/10 rounded-lg">
+            <p className="text-destructive mb-2">{error}</p>
+            <p className="text-foreground/70">
+              Tente novamente mais tarde ou verifique a conexão com a API do GitHub.
+            </p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -100,22 +137,22 @@ const ProjectsSection = () => {
                   <p className="text-foreground/70 text-sm mb-4">
                     {project.description || "No description available"}
                   </p>
-                  {project.language && (
-                    <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.language && (
                       <span className="text-xs px-2 py-1 bg-secondary/50 rounded-full flex items-center gap-1">
                         <span className="w-2 h-2 rounded-full bg-primary"></span>
                         {project.language}
                       </span>
-                      <span className="text-xs px-2 py-1 bg-secondary/50 rounded-full flex items-center gap-1">
-                        <Star size={10} />
-                        {project.stargazers_count}
-                      </span>
-                      <span className="text-xs px-2 py-1 bg-secondary/50 rounded-full flex items-center gap-1">
-                        <GitFork size={10} />
-                        {project.forks_count}
-                      </span>
-                    </div>
-                  )}
+                    )}
+                    <span className="text-xs px-2 py-1 bg-secondary/50 rounded-full flex items-center gap-1">
+                      <Star size={10} />
+                      {project.stargazers_count}
+                    </span>
+                    <span className="text-xs px-2 py-1 bg-secondary/50 rounded-full flex items-center gap-1">
+                      <GitFork size={10} />
+                      {project.forks_count}
+                    </span>
+                  </div>
                   <div className="flex space-x-3 pt-2">
                     {project.homepage && (
                       <Button 
