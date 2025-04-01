@@ -52,8 +52,8 @@ const ContactSection = () => {
 
     // Send the email using EmailJS
     emailjs.send(
-      'YOUR_SERVICE_ID', // Replace with your EmailJS Service ID
-      'YOUR_TEMPLATE_ID', // Replace with your EmailJS Template ID
+      'service_8kmxikg', // Replace with your EmailJS Service ID
+      'template_3whhi7g', // Replace with your EmailJS Template ID
       templateParams
     )
       .then(() => {
