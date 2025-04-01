@@ -137,7 +137,6 @@ const SkillsSection = () => {
                   { name: 'Supabase', logo: 'https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg' },
                   { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
                   { name: 'VSCode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-                  { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
                   { name: 'Vercel', logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Ionicons_logo-vercel.svg' },
                   { name: 'Netlify', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg' },
                   { name: 'GitHub Actions', logo: 'https://www.vectorlogo.zone/logos/github/github-tile.svg' },
