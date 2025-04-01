@@ -28,11 +28,7 @@ const skills = [
     level: 75, 
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
   },
-  { 
-    name: 'Figma', 
-    level: 70, 
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'
-  },
+
 ];
 
 const SkillsSection = () => {
