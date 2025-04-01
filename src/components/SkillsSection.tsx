@@ -16,19 +16,23 @@ const skills = [
   { 
     name: 'TailwindCSS', 
     level: 95, 
-    logo: 'https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png'
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg'
   },
   { 
     name: 'Supabase', 
     level: 80, 
-    logo: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png'
+    logo: 'https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg'
   },
   { 
     name: 'Next.js', 
     level: 75, 
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
   },
- 
+  { 
+    name: 'Figma', 
+    level: 70, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'
+  },
 ];
 
 const SkillsSection = () => {
@@ -114,10 +118,10 @@ const SkillsSection = () => {
                   { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
                   { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
                   { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-                  { name: 'TailwindCSS', logo: 'https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png' },
+                  { name: 'TailwindCSS', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg' },
                   { name: 'HTML5', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
                   { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-                  { name: 'Framer Motion', logo: 'https://seeklogo.com/images/F/framer-motion-logo-DA1E33CAA1-seeklogo.com.png' },
+                  { name: 'Framer Motion', logo: 'https://www.vectorlogo.zone/logos/framer/framer-icon.svg' },
                 ].map((tech, index) => (
                   <div 
                     key={index} 
@@ -134,14 +138,14 @@ const SkillsSection = () => {
               <h3 className="text-lg md:text-xl font-bold mb-4 text-center md:text-left">Ferramentas & Backend</h3>
               <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
                 {[
-                  { name: 'Supabase', logo: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png' },
+                  { name: 'Supabase', logo: 'https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg' },
                   { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
                   { name: 'VSCode', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
                   { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-                  { name: 'Vercel', logo: 'https://seeklogo.com/images/V/vercel-logo-F748E39008-seeklogo.com.png' },
+                  { name: 'Vercel', logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Ionicons_logo-vercel.svg' },
                   { name: 'Netlify', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg' },
-                  { name: 'GitHub Actions', logo: 'https://seeklogo.com/images/G/github-actions-logo-031704BDC6-seeklogo.com.png' },
-                  { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
+                  { name: 'GitHub Actions', logo: 'https://www.vectorlogo.zone/logos/github/github-tile.svg' },
+                  { name: 'Firebase', logo: 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg' },
                   { name: 'Rest API', logo: 'https://www.svgrepo.com/show/375531/api.svg' },
                 ].map((tool, index) => (
                   <div 
