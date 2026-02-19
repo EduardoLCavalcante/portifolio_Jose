@@ -66,12 +66,6 @@ const ProjectsSection = () => {
     };
   }, [projects]); // Added projects as dependency to reinitialize animation after loading
 
-  // Repository images mapping - used for AprovaUFC repos and placeholders
-  const repoImages = {
-    'portalAluno': 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=2070',
-    'portalProfessor': 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=2070',
-  };
-
   // Placeholder images for repositories that don't have images
   const placeholderImages = [
     'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070',
@@ -80,15 +74,6 @@ const ProjectsSection = () => {
     'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&q=80&w=2070',
     'https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?auto=format&fit=crop&q=80&w=2080',
   ];
-
-  const getImageForRepo = (repo: Repository, index: number) => {
-    // Return specific image for AprovaUFC repos
-    if (repoImages[repo.name as keyof typeof repoImages]) {
-      return repoImages[repo.name as keyof typeof repoImages];
-    }
-    // Otherwise return a placeholder image
-    return placeholderImages[index % placeholderImages.length];
-  };
 
   const renderProjectSkeleton = () => (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -117,7 +102,7 @@ const ProjectsSection = () => {
             Meus <span className="text-gradient">Projetos</span>
           </h2>
           <p className="text-foreground/70 max-w-2xl mx-auto projects-animate hidden-initially">
-            Uma seleção dos meus repositórios GitHub, incluindo projetos pessoais e colaborações em equipe.
+            Uma seleção dos meus repositórios GitHub recentes.
           </p>
         </div>
 
@@ -140,7 +125,7 @@ const ProjectsSection = () => {
               >
                 <div className="relative h-48 overflow-hidden">
                   <img 
-                    src={getImageForRepo(project, index)} 
+                    src={placeholderImages[index % placeholderImages.length]} 
                     alt={project.name} 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />

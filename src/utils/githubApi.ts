@@ -49,23 +49,9 @@ export async function fetchRepositories(): Promise<Repository[]> {
       throw new Error('Failed to fetch repositories');
     }
     
-    const userRepos = await response.json();
-    
-    // Now get the specific AprovaUFC repositories
-    const specificRepos = await Promise.all([
-      fetch('https://api.github.com/repos/AprovaUFC/portalAluno').then(res => res.json()),
-      fetch('https://api.github.com/repos/AprovaUFC/portalProfessor').then(res => res.json())
-    ]);
-    
-    // Combine the specific repos with user repos and return the first 6
-    const allRepos = [...specificRepos, ...userRepos];
-    const uniqueRepos = Array.from(new Map(allRepos.map(repo => [repo.id, repo])).values());
-    
-    // Take only the first 6 repositories
-    const finalRepos = uniqueRepos.slice(0, 6);
-    
-    console.log('Repositories fetched:', finalRepos);
-    return finalRepos;
+    const data = await response.json();
+    console.log('Repositories fetched:', data);
+    return data;
   } catch (error) {
     console.error('Error fetching repositories:', error);
     return [];
